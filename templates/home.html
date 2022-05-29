@@ -1,0 +1,58 @@
+
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-intro padding-y-sm">
+<div class="container">
+
+<div class="intro-banner-wrap">
+	<img src="{% static 'images/banners/1D.jpg'%}" class="img-fluid rounded">
+</div>
+
+</div> <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<!-- ========================= SECTION  ========================= -->
+<section class="section-name padding-y-sm">
+<div class="container">
+
+<header class="section-heading">
+	<a href="{% url 'store' %}" class="btn btn-outline-primary float-right">See all</a>
+	<h3 class="section-title">Popular products</h3>
+</header><!-- sect-heading -->
+
+
+<div class="row">
+{% for product in products %}  	<!-- sebelum ni dia buat satu2 tapi kali ni dia buat for loop -->
+	<div class="col-md-3">
+		<div class="card card-product-grid">
+			<a href="{{ product.get_url }}" class="img-wrap"> <img src="{{ product.images.url }}"> </a> <!-- (dah x valid sbb product-detail.html dah ditukar )ni pon ambik dari folder models.py,,,tapi kita tambah .url sebab kita x ambik directly dari folder image tu, tapi die render kat url tu kat browser n mach dengan folder dalam media FOLDER BESAR  -->
+			<figcaption class="info-wrap">
+				<a href="{{ product.get_url }}" class="title">{{ product.product_name }}</a> 						<!-- dulu dalam kurungan tu print bodo2 je nama manually, sekarang dah link ke database -->
+				<div class="price mt-1">RM {{ product.price }}</div> <!-- price-wrap.// -->								<!-- product datang dari model file model.py bawah folder Store...product name pon sama -->
+			</figcaption>
+		</div>
+	</div> <!-- col.// -->
+	{% endfor %} 							<!-- tamat loop for -->
+</div> <!-- row.// -->
+
+</div><!-- container // -->
+</section>
+<!-- ========================= SECTION  END// ========================= -->
+
+
+
+
+
+
+</body>
+</html>
+
+{% endblock %}
