@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('product_name', models.CharField(max_length=200, unique=True)),
                 ('slug', models.SlugField(max_length=200, unique=True)),
                 ('description', models.TextField(blank=True, max_length=500)),
-                ('price', models.IntegerField()),
+                ('price', models.DecimalField(max_digits=8, decimal_places=2)),
                 ('images', models.ImageField(upload_to='photos/products')),
                 ('stock', models.IntegerField()),
                 ('is_available', models.BooleanField(default=True)),
