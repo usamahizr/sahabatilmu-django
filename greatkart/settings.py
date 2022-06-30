@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'accounts',
     'store',
     'carts',
+    'orders',
 ]
 
 MIDDLEWARE = [
@@ -146,5 +147,5 @@ MESSAGE_TAGS = {
 EMAIL_HOST = 'smtp.gmail.com' #khas untuk gmail
 EMAIL_PORT = 587 # no ni khas untuk gmail
 EMAIL_HOST_USER = "ahmadusamah1998@gmail.com" #dummy email address katenye
-EMAIL_HOST_PASSWORD = 'okorwfkbtaxtjthe'
+EMAIL_HOST_PASSWORD = 'suheydduqjdeeuka'
 EMAIL_USE_TLS = True

@@ -39,7 +39,7 @@
 				<p class="text-muted small">
 					{% if cart_item.variations.all %}
 						{% for item in cart_item.variations.all %}
-							{{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }}  <br>
+							{{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }} <br>
 						{% endfor %}
 					{% endif %}
 				</p>
@@ -69,7 +69,7 @@
 	<td>
 		<div class="price-wrap">
 			<var class="price">RM {{ cart_item.sub_total }}</var>  <!-- total price.......sub_total fx. di bina kat [=]models UNDER []cart-->
-			<small class="text-muted"> RM {{ cart_item.product.price }} </small>
+			<small class="text-muted"> RM {{ cart_item.product.price }} each </small>
 		</div> <!-- price-wrap .// -->
 	</td>
 	<td class="text-right">
@@ -103,7 +103,7 @@
 			<p class="text-center mb-3">
 				<img src="{% static './images/misc/payments.png' %}" height="26"> <!--height tu = size gambo2 card payments-->
 			</p>
-			<a href="./place-order.html" class="btn btn-primary btn-block"> Checkout </a>
+			<a href="{% url 'checkout' %}" class="btn btn-primary btn-block"> Checkout </a>
 			<a href="{% url 'store' %}" class="btn btn-light btn-block">Continue Shopping</a>
 		</div>  <!--card-body.// -->
 		</div> <!-- card.// -->
